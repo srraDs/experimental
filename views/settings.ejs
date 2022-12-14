@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" media="all" href="/css/settings.css" > 
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <div class="navbar">
+        <a class="logo" href="/home"> <img src="/images/logo.png" alt="Logo"></a>
+        <a class="name" href="/home">PROFADVISOR</a>
+        
+        <a class="navbutton" href="/admin">ADMIN</a>
+        <a class="navbutton" href="/logout">LOGOUT</a>
+    </div>
+
+    <!-- EDIT PROFILE -->
+    <div class="settings-container">
+       
+        <!-- SETTINGS BOX -->
+        <div class="settings-box">
+
+            <!-- LEFT ACCENT BOX -->
+            <div class="left-box"></div>
+
+            <!-- EDIT PROFILE PIC -->
+            <div class="profile-pic">
+                <span class="edit-profile">EDIT PROFILE </span>
+                <img src="/images/icon.png"> <!-- PROFILE PIC IMAGE -->
+                <span class="change-pic">Change</span> <!--  CHANGE PROFILE PIC BUTTON -->
+            </div>
+
+            <div class="form-container">
+                <!-- EDIT INFORMATION -->
+                <form action="/updateUsername/<%= user.id %>" method="POST" id="edit-info-form">
+
+                    <!-- EDIT USERNAME -->
+                    <div class="form" id="username-div">
+                        <label for="username-text"> New Username </label>
+                        <br>
+                        <input type="text" name="username" id="username" placeholder="<%= user.username %>">
+                    </div>
+
+                    <!-- SAVE CHANGES BUTTON -->
+                    <div class="form" id="button-div">
+                        <button type="submit" id="save-button"> <span class="button-text"> SAVE CHANGES </span> </button> 
+                    </div>
+                
+                </form>
+
+                <form action="/updateEmail/<%= user.id %>" method="POST" id="edit-info-form">
+                    
+                    <!-- CHANGE EMAIL -->
+                    <div class="form" id="email-div">
+                        <span class="change-email"> CHANGE EMAIL ADDRESS </span>
+                        <br><br>
+                        
+                        <label for="new-email"> New Email </label> 
+                        <br>
+                        <input type="text" name="email" id="email" placeholder="<%= user.email %>" >
+                    </div>
+
+                    <!-- SAVE CHANGES BUTTON -->
+                    <div class="form" id="button-div">
+                        <button type="submit" id="save-button"> <span class="button-text"> SAVE CHANGES </span> </button> 
+                    </div>
+
+                </form>
+                
+                <form action="/updatePassword/<%= user.id %>" method="POST" id="edit-info-form">
+                    <!-- CHANGE PASSWORD -->
+                    <div class="form" id="password-div">
+                        <span class="change-password"> CHANGE PASSWORD </span>
+                        <br><br>
+
+                        <label for="password"> New Password </label> 
+                        <br>
+                        <input type="password" name="password" id="password">
+                    </div>
+
+                    <!-- SAVE CHANGES BUTTON -->
+                    <div class="form" id="button-div">
+                        <button type="submit" id="save-button"> <span class="button-text"> SAVE CHANGES </span> </button> 
+                    </div>
+                </form>
+
+            </div>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

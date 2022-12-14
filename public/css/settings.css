@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+:root {
+    --ourwhite: #feffff;
+    --accent: #def2f1;
+    --semiDarkBlue: #3AAFA9;
+    --darkBlue: #2b7a78;
+    --dark: #17252a;
+}
+
+html, body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--accent);
+    height: 100%;
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    overflow: hidden;
+    background-color: var(--ourwhite);
+}
+
+.navbar a.navbutton {
+    color: black;
+    text-align: center;
+    padding: 30px 5px;
+    text-decoration: none;
+    font-size: 25px;
+    float: right;
+    margin-right: 30px;
+    
+    color: rgba(0, 0, 0, 0.5);
+    
+}
+.navbar a.name {
+    color: black;
+    text-align: center;
+    margin-left: 2.80px;
+    margin-top:27px; 
+    text-decoration: none;
+    font-size: 32px;
+    float: left;
+    font-weight: 1000;
+
+    color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.navbar img {
+    height: 67px;
+    width: 67px;
+    padding-top: 12px;
+    padding-left: 25px;
+    border-radius: 50%;
+}
+
+.navbar a.logo {
+    float: left;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    
+}
+ 
+.navbar a.navbutton:hover {
+    background-color: var(--semiDarkBlue);
+    color: var(--ourwhite);
+}
+
+/* EDIT PROFILE */
+
+.settings-container {
+    padding-top: 50px;
+    
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.settings-box {
+    box-sizing: border-box;
+
+    width: 1300px;
+    height: 814px;
+
+    background: var(--ourwhite);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.left-box {
+    box-sizing: border-box;
+
+    width: 115px;
+    height: 783px;
+    margin-left: 21px;
+    margin-top: 14px;
+
+    background: var(--semiDarkBlue);
+    border: 3px solid #818181;
+}
+
+.profile-pic{
+    padding: 10px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.profile-pic img{
+    padding-top: 20px;
+    width: 200px;
+}
+
+span.edit-profile {
+    padding-left: 31px;
+    padding-top: 55px;
+
+    font-weight: 600;
+    font-size: 36px;  
+    
+    color: #818181;
+}
+
+span.change-pic {
+    font-weight: 300;
+    font-size: 20px;
+
+    color: var(--semiDarkBlue);
+}
+
+span.change-pic:hover {
+    cursor: pointer;
+}
+
+.form label {
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    font-size: 20px;
+    color: #818181;
+}
+
+input {
+    padding-top: 5px;
+    
+    box-sizing: border-box;
+    width: 355px;
+    height: 39px;
+
+    border: 1px solid rgba(121, 119, 119, 0.4);
+    border-radius: 5px;
+}
+
+select {
+    padding-top: 5px;
+    
+    box-sizing: border-box;
+    width: 355px;
+    height: 39px;
+
+    border: 1px solid rgba(121, 119, 119, 0.4);
+    border-radius: 5px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#username-div {
+    padding-top: 133px;
+}
+
+#email-div {
+    padding-top: 45px;
+}
+
+#password-div {
+    padding-top: 30px;
+}
+
+#course-name-div {
+    padding-top: 30px;
+}
+
+span.change-email, span.change-password {
+    font-weight: 600;
+    font-size: 24px;
+
+    color: #818181;
+}
+
+#button-div {
+    padding-top: 46px;
+}
+
+#save-button {
+    width: 230px;
+    height: 35px;
+  
+    background: var(--semiDarkBlue);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: 0px;
+}
+
+span.button-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: var(--ourwhite);
+}
+
+span.add-course {
+    font-weight: 500;
+
+    color: var(--ourwhite);
+}
+
+#save-button:hover {
+    cursor: pointer;
+}
+
+.add-input {
+    width: 120px;
+    height: 25px;
+  
+    background: var(--semiDarkBlue);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: 0px;
+}
+
+.add-input:hover {
+    cursor: pointer;
+}
+
+.add-name {
+    width: 120px;
+    height: 25px;
+  
+    background: var(--semiDarkBlue);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: 0px;
+}
+
+.add-name:hover {
+    cursor: pointer;
+}

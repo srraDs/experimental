@@ -1,0 +1,187 @@
+<html>
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" media="all" href="/css/settings.css" > 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <div class="navbar">
+        <a class="logo" href="/home"> <img src="/images/logo.png" alt="Logo"></a>
+        <a class="name" href="/home">PROFADVISOR</a>
+        
+        <a class="navbutton" href="/home">SEARCH</a>
+        <a class="navbutton" href="/logout">LOGOUT</a>
+    </div>
+
+    <!-- EDIT PROFILE -->
+    <div class="settings-container">
+       
+        <!-- SETTINGS BOX -->
+        <div class="settings-box">
+
+            <!-- LEFT ACCENT BOX -->
+            <div class="left-box"></div>
+
+            <!-- EDIT PROFILE PIC -->
+            <div class="profile-pic">
+                <span class="edit-profile">ADD PROFESSOR</span>
+                <img src="images/icon.png"> <!-- PROFILE PIC IMAGE -->
+                <span class="change-pic">Change</span> <!--  CHANGE PROFILE PIC BUTTON -->
+            </div>
+
+            <!-- ADD INFORMATION -->
+            <form action="/admin" method="post" id="edit-info-form"> <!-- CHANGE METHOD -->
+
+                <!-- ADD USERNAME -->
+                <div class="form" id="username-div">
+                    <label for="username-text"> Name </label>
+                    <br>
+                    <input type="text" name="name" id="username-input">
+                </div>
+
+                <!-- SELECT DEPARTMENT -->
+                <div class="form" id="email-div">
+                    <span class="change-email"> PROFESSOR INFORMATION </span>
+                    <br><br>
+
+                    <label for="college"> College </label> 
+                    <br>
+                    
+                    <select name="college" id="college"">
+                        <option value="">---SELECT COLLEGE---</option>
+                        <option value="CSS">College of Computer Studies</option>
+                        <option value="CLA">College of Liberal Arts</option>
+                        <option value="GCOE">Gokongwei College of Engineering</option>
+                        <option value="RVR-COB">Ramon V. del Rosario College of Business</option>
+                        <option value="BAGCED">Br. Andrew Gonzales FSC College of Education</option>
+                        <option value="COS">College of Science</option>
+                        <option value="SOE">School of Economics</option>
+                    </select>
+
+                    <br><br>
+                    
+                    <label for="department"> College Departments </label> 
+                    <br>
+                    
+                    <select name="department" id="department">
+                        <option value="">---SELECT DEPARTMENT---</option>
+                    </select>
+                </div>
+                
+                <!-- ADD COURSES -->
+                <div class="form" id="password-div">
+                    <span class="change-password"> LIST OF COURSES </span>
+                    <br><br>
+
+                    <label for="password"> Courses Taught </label> 
+                    <button type="button" class="add-input"><span class="add-course"> ADD COURSE </span></button>
+                    <br>
+                    <input type="courses" name="courses" id="courses">
+                    <br>
+
+                </div>
+
+                <div class="form" id="course-name-div">
+                    <span class="change-password"> COURSE NAME </span>
+                    <br><br>
+
+                    <label for="password"> Courses Names </label> 
+                    <button type="button" class="add-name"><span class="add-course"> ADD NAME </span></button>
+                    <br>
+                    <input type="courses_name" name="courses_name" id="courses_name">
+                    <br>
+
+                </div>
+
+                <!-- SAVE CHANGES BUTTON -->
+                <div class="form" id="button-div">
+                    <button type="submit" id="save-button"> <span class="button-text"> ADD PROF </span> </button> 
+                </div>
+            </form>
+
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <script>
+
+        $("#college").change(function () {
+            var val = $("#college").val();
+
+            if (val == "CSS") { $("#department").html(
+                "<option value='Software Technology'>Software Technology</option> " +
+                "<option value='Computer Technology'>Computer Technology</option> " +
+                "<option value='Information Technology'>Information Technology</option>" 
+                );
+            } else if (val == "CLA") { $("#department").html(
+                "<option value='Sociology and Behavioral Sciences'>Sociology and Behavioral Sciences</option>" +
+                "<option value='Communication'>Communication</option>" + 
+                "<option value='Filipino'>Filipino</option>" + 
+                "<option value='History'>History</option>" + 
+                "<option value='International Studies'>International Studies</option>" + 
+                "<option value='Literature'>Literature</option>" + 
+                "<option value='Philosophy'>Philosophy</option>" + 
+                "<option value='Political Science'>Political Science</option>" +  
+                "<option value='Psychology'>Psychology</option>"
+                );
+            } else if (val == "GCOE") { $("#department").html(
+                "<option value='Chemical Engineering'>Chemical Engineering</option>" +
+                "<option value='Civil Engineering'>Civil Engineering</option>" + 
+                "<option value='Electronics and Communication Engineering'>Electronics and Communication Engineering</option>" + 
+                "<option value='Mechanical Engineering'>Mechanical Engineering</option>" + 
+                "<option value='Industrial Engineering'>Industrial Engineering</option>" +  
+                "<option value='Manufacturing Engineering and Management'>Manufacturing Engineering and Management</option>"
+                );
+            } else if (val == "RVR-COB") { $("#department").html(
+                "<option value='Accountancy'>Accountancy</option>" +  
+                "<option value='Commercial Law'>Commercial Law</option>" +  
+                "<option value='Decision Sciences and Innovation'>Decision Sciences and Innovation</option>" +
+                "<option value='Management of Financial Institutions'>Management of Financial Institutions</option>" +  
+                "<option value='Management and Organization'>Management and Organization</option>" +    
+                "<option value='Marketing Management'>Marketing Management</option>"
+                );
+            } else if (val == "BAGCED") { $("#department").html(
+                "<option value='Counseling and Educational Psychology'>Counseling and Educational Psychology</option>" +  
+                "<option value='English and Applied Linguistics'>English and Applied Linguistics</option>" +  
+                "<option value='Educational Leadership and Management'>Educational Leadership and Management</option>" +
+                "<option value='Physical Education'>Physical Education</option>" +  
+                "<option value='Science Education'>Science Education</option>"
+                );
+            } else if (val == "COS") { $("#department").html(
+                "<option value='Biology'>Biology</option>" +  
+                "<option value='Chemistry'>Chemistry</option>" +  
+                "<option value='Mathematics and Statistics'>Mathematics and Statistics</option>" +
+                "<option value='Physics'>Physics</option>"
+                );
+            } else if (val == "SOE") { $("#department").html(
+                "<option value='Economics'>Economics</option>");
+            } else { $("#department").html(
+                "<option value=''>---SELECT DEPARTMENT---</option>");
+            }
+        });
+
+        $('.add-input').on('click', addInput);
+
+        function addInput(){
+            $('#password-div').append(
+                '<input type="courses" name="courses" id="courses">' +
+                '<br>'
+            );
+        }
+
+        $('.add-name').on('click', addName);
+
+        function addName(){
+            $('#course-name-div').append(
+                '<input type="courses_name" name="courses_name" id="courses_name">' +
+                '<br>'
+            );
+        }
+
+    </script>
+</body>
+</html>

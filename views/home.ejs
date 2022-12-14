@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/menu.css">
+    <title>Main Menu</title>
+</head>
+
+<body>
+    <!------------------NAVBAR--------------------->
+    <div class="navbar">
+        <a class="logo" href="/"> <img src="/images/logo.png" alt="Logo"></a>
+        <a class="name" href="/">PROFADVISOR</a>
+        <a class="navbutton" href="/settings/<%= user.id %>">SETTINGS</a>
+
+    </div>
+<!------------------content container--------------------->
+    <div id="menucontainer">
+        <!------------------post container--------------------->
+        <% colleges.forEach(function(college){ %>  
+        <a href="profList/<%= college.college %>" class="postcontain">
+
+            <div class="post-head">
+                <p><%= college.name %></p>
+            </div>
+        </a>
+        <% }); %>
+        
+    </div>
+   
+</body>
+
+</html>
